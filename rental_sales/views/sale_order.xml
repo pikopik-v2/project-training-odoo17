@@ -13,15 +13,15 @@
                 <attribute name="domain">[('sale_ok', '=', True), ('is_rent', '=', True)]</attribute>
             </xpath>
              <xpath expr="//header" position="inside">
-                <button name="action_confirm" type="object" string="Confirm" class="btn-primary"/>
+                <!-- <button name="action_confirm" type="object" string="Confirms" class="btn-primary"/> -->
                 <button name="action_reserve" type="object" string="Reserve" class="btn-primary" invisible="state != 'sale' or rental_status != 'draft'"/>
                 <button name="action_returned" type="object" string="Turn In" class="btn-primary" invisible="rental_status in ('draft', 'returned', 'cancelled')"/>
-                <field name="rental_status" widget="statusbar" options="{'clickable': False}" />
             </xpath>
-            <xpath expr="//field[@name='payment_term_id']" position="after">    
+            <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="rental_start_date" string="Rental Start"/>
                     <field name="rental_return_date"  string="Rental End"/>
                     <field name="duration_days" string="Duration" />
+                    <field name="rental_status" string="Rental Status" widget="badge" optional="show" />
             </xpath>
         </field>
     </record>
