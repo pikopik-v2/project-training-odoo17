@@ -14,9 +14,9 @@
             </xpath>
              <xpath expr="//header" position="inside">
                 <button name="action_confirm" type="object" string="Confirm" class="btn-primary"/>
-                <!-- <button name="action_reserve" type="object" string="Reserve" class="btn-primary" invisible="state != 'sale' or rental_status != 'draft'"/>
-                <button name="action_returned" type="object" string="Turn In" class="btn-primary" invisible="rental_status in ('draft', 'returned', 'cancelled')"/> -->
-                <!-- <field name="rental_status" widget="statusbar" options="{'clickable': False}" /> -->
+                <button name="action_reserve" type="object" string="Reserve" class="btn-primary" invisible="state != 'sale' or rental_status != 'draft'"/>
+                <button name="action_returned" type="object" string="Turn In" class="btn-primary" invisible="rental_status in ('draft', 'returned', 'cancelled')"/>
+                <field name="rental_status" widget="statusbar" options="{'clickable': False}" />
             </xpath>
             <xpath expr="//field[@name='payment_term_id']" position="after">    
                     <field name="rental_start_date" string="Rental Start"/>
