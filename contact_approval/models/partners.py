@@ -25,4 +25,5 @@ class Partners(models.Model):
     def action_reset(self):
         for rec in self:
             rec.state = 'draft'
+            rec.approver_id = False  # Mereset approved by
 
