@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="contact_approval_admin" model="res.groups">
+            <field name="name">Contact Approval Manager</field>
+        </record>
+         <record id="contact_approval_user" model="res.groups">
+            <field name="name">Caontact Approval User</field>
+        </record>
+    </data>
+</odoo>

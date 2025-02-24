@@ -1,0 +1,3 @@
+<odoo>
+    <menuitem name="Contact Approval" id="root_level_main" action="contact_approval_action" />
+</odoo>
