@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import _, models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class SaleOrder(models.Model):
@@ -32,11 +33,13 @@ class SaleOrder(models.Model):
                 record.duration_days = 0
 
     def action_confirm(self):
-        today = fields.Datetime.now()
-        for record in self:
-            if record.rental_start_date and record.rental_return_date:
-                if record.rental_start_date <= today <= record.rental_return_date:
-                    record.rental_status = "reserved"
+        res = super(SaleOrder, self).action_confirm()
+        for order in self:
+            if order.is_rental_order:
+                now = fields.Datetime.now()
+                if order.rental_start_date <= now <= order.rental_return_date:
+                    order.rental_status = 'reserved'
+        return res
 
     def action_reserve(self):
         for record in self:
@@ -44,4 +47,4 @@ class SaleOrder(models.Model):
 
     def action_returned(self):
         for record in self:
-            record.rental_status = 'draft'
+            record.rental_status = 'returned'

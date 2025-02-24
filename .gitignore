@@ -1,1 +1,5 @@
-.idea
+/.idea
+/rental_sales/__pycache__
+/rental_sales/models/__pycache__
+/contact_approval/__pycache__
+/contact_approval/models/__pycache__
