@@ -25,6 +25,7 @@ aplikasi rental sales
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/sale_order.xml',
+        'views/sale_order_view.xml',
         'views/rental_view.xml',
         'views/product_view.xml',
         'views/rental_menu.xml',
