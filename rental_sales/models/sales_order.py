@@ -19,7 +19,6 @@ class SaleOrder(models.Model):
             ('cancelled', 'Cancelled'),
         ],
         default='draft',
-
     )
 
     @api.depends("rental_start_date", "rental_return_date")
